@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vella Checkout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://checkout.vella.finance/widget/sdk.js" type="module" ></script>
+</head>
+
+<body class="px-3 py-3">
+    <button id="vwdg-btn" class="bg-pink-800 px-3 py-3 rounded-md shadow-md text-white w-32"> Pay </button>
+    <script>
+        document.getElementById('vwdg-btn').addEventListener('click', function (e) {
+            const key = ""; // your vella API test/live key
+            const config = {
+                email: 'example@mail.com', // string - customer email
+                name: "Tade Ogidan", // string - customer name
+                amount: 100.00, //float - amount to be pay
+                currency: "NGNT", // supported fiat NGNT,USDT,USDC
+                merchant_id: "" // string - merchant id
+            };
+            const vellaSDK = VellaCheckoutSDK.init(key, config);
+            vellaSDK.onSuccess(response => {
+                console.log("data", response)
+            })
+            vellaSDK.onError(error => {
+                console.log("error", error)
+            });
+            vellaSDK.onClose(() => {
+                console.log("widget closed")
+            });
+        })
+    </script>
+</body>
+
+</html>
