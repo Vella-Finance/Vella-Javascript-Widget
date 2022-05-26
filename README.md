@@ -19,7 +19,7 @@ Open the `index.html` file in your preferred text editor, update the config obje
             const config = {
                 email: 'example@mail.com', // string - customer email
                 name: "Tade Ogidan", // string - customer name
-                amount: 100.00, //float - amount to be pay
+                amount: 100.00, //float - amount to pay
                 currency: "NGNT", // supported fiat NGNT,USDT,USDC
                 merchant_id: "" // string - merchant id
             };
