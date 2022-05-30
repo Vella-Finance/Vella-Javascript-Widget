@@ -18,7 +18,8 @@
                 name: "Tade Ogidan", // string - customer name
                 amount: 100.00, //float - amount to pay
                 currency: "NGNT", // supported fiat NGNT,USDT,USDC
-                merchant_id: "" // string - merchant id
+                merchant_id: "", // string - merchant id
+                reference: "" // string - your transaction reference
             };
             const vellaSDK = VellaCheckoutSDK.init(key, config);
             vellaSDK.onSuccess(response => {
